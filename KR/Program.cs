@@ -21,5 +21,37 @@ void PrintArray (string[] array)
         }
 }
 
+int CountArrayElements (string[] array)
+{
+    int count = 0;
+    for (int i = 0; i<array.Length; i++)
+    {
+        if (array[i].Length<=3)
+        {
+           count+=1; 
+        }
+    }
+    return count;
+}
+
+void NewArray (string[] array, int count)
+{
+    Console.WriteLine("Новый массив:");
+    int k = 0;
+    string[] newarray = new string [count];
+    for (int i = 0; i<array.Length; i++)
+    {
+        if (array[i].Length<=3)
+        {
+            k+=1;
+            newarray[k-1] = array[i];
+            Console.WriteLine(newarray[k-1]);
+        }
+
+    }
+}
+
 FillArray(n,array);
 PrintArray(array);
+NewArray(array,CountArrayElements(array));
+
